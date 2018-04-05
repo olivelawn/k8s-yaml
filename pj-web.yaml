@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: pj-dep
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        foo3: bar3
+    spec:
+      containers:
+      - name: pj-container
+        image: nginx:alpine
+        ports:
+        - containerPort: 80

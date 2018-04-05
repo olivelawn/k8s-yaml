@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: service-client-dns-lookup
+spec:
+  restartPolicy: Never
+  containers:
+  - name: service-client
+    image: alpine
+    command: ["/bin/sh"]
+    args: ["-c", "nslookup service-test"]

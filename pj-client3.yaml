@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pj-client-test4
+spec:
+  restartPolicy: Never
+  containers:
+  - name: pj-client-test4
+    image: alpine
+    command: ["/bin/sh"]
+    args: ["-c", "echo 'GET / HTTP/1.1\r\n\r\n' | nc 172.17.0.5 8080"]
